@@ -1,0 +1,7 @@
+steps:
+  # sync data_ingestion_template
+  - name: gcr.io/cloud-builders/gsutil
+    args:
+      - '-c'
+      - 'gsutil -m rsync -r -d pipeline "gs://${_BUCKET}/pipeline"'
+    entrypoint: bash
